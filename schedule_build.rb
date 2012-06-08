@@ -24,6 +24,12 @@ module Jekyll
     end
   end
 
+  class ScheduleBuildFile < StaticFile
+    def write(dest)
+      # File is already written
+    end
+  end
+
   class ScheduleBuildGenerator < Generator
     def generate(site)
       next_build = site.config['next_build']
@@ -32,7 +38,7 @@ module Jekyll
         f = File.new(date_file, 'w')
         f.write(next_build.strftime("%s"))
         f.close
-        site.static_files << Jekyll::StaticFile.new(site, site.dest, '', 'next_build.txt')
+        site.static_files << ScheduleBuildFile.new(site, site.dest, '', 'next_build.txt')
       end
     end
   end
