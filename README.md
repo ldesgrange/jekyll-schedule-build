@@ -9,3 +9,7 @@ There are 2 parts in this plugin. The plugin itself, writing a file with the pub
 Putting `no_schedule: true` in your `_config.yml` will deactivate the plugin.
 
 Putting `no_schedule: true` in your post will deactivate the plugin for the post.
+
+## License ##
+
+See LICENSE file.
